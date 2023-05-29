@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/Authprovider";
 
 const FoodCard = ({ item }) => {
   const { name, image, price, recipe } = item;
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleAddToCart = (item) => {
     console.log(item);
+    if (user) {
+      fetch("http://localhost:5000/carts")
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else {
+      Swal.fire({
+        title: "Please Login to order the food.",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
   };
 
   return (
