@@ -31,10 +31,11 @@ const Menu = () => {
       subHeading={"---Don't miss---"}
       heading={"TODAY'S OFFER"}
       />
-<MenuCategory className="" items={offered}/>
+      {/* offered menu */}
+<MenuCategory className=""  items={offered}/>
 
-      {/* 2 */}
-      <div className="mb-12">
+      {/* 2 dessert*/}
+      {/* <div className="mb-12">
       <Cover
         img={dessertsIMG}
         title={"DESSERTS"}
@@ -42,10 +43,10 @@ const Menu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       />
-      </div>
-      <MenuCategory items={dessert}/>
+      </div> */}
+      <MenuCategory  title="dessert" description={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={pizzaIMG} items={pizza}/>
       {/* 3 */}
-     <div className="mb-12">
+     {/* <div className="mb-12">
      <Cover
         img={pizzaIMG}
         title={"PIZZA"}
@@ -53,10 +54,10 @@ const Menu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       />
-     </div>
-      <MenuCategory items={pizza}/>
+     </div> */}
+      <MenuCategory  title="pizza" description={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={dessertsIMG} items={dessert}/>
       {/* 4 */}
-      <div className="mb-12">
+      {/* <div className="mb-12">
       <Cover 
         img={saladIMG}
         title={"SALADS"}
@@ -64,10 +65,10 @@ const Menu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       />
-      </div>
-      <MenuCategory items={salad}/>
+      </div> */}
+     <MenuCategory  title="salad" description={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={saladIMG} items={salad}/>
       {/* 5 */}
-      <div className="mb-12">
+      {/* <div className="mb-12">
       <Cover
         img={soupIMG}
         title={"SOUPS"}
@@ -75,8 +76,8 @@ const Menu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       />
-      </div>
-      <MenuCategory items={soup}/>
+      </div> */}
+      <MenuCategory  title="soup" description={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={soupIMG} items={soup}/>
     </div>
   );
 };
